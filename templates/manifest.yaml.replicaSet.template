@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=../../../feature-adapter/src/schemas/manifest.schema.json
+---
+id: feature_id
+name: feature_name
+organization: feature_org
+version: feature_version 
+deployments:
+  - kind: feature_kind
+    featureId: feature_id
+    version: feature_version 
+    name: feature_description 
+    categories:
+      - "feature_category"
+    uiSchemaRef: schemas/ui.schema.json
+    schemaParserRulesRef: schemas/schemaParserRules.json
+    helmChart:
+      name: feature_id
+      nameOfFeatureInRepo: feature_helm_chart_url 
+      versionOfFeature: feature_version
+      valuesFile: helm/values.yaml
+    dependencies:
+      - featureId: microk8s
+        name: microk8s
+        version: 1.0.0
