@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "title": "feature_id",
+    "properties": {
+      "featureName": {
+        "type": "string",
+        "title": "Feature name",
+        "enum": [
+          "feature_id"
+        ],
+        "default": "feature_id"
+      }
+    }
+}

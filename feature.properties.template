@@ -1,0 +1,12 @@
+feature_id: your_feature_id
+feature_name: your_feature_name
+feature_description: your_feature_description 
+feature_version: your_feature_version
+feature_org: your_feature_organization
+feature_kind: your_feature_kind
+feature_install_type: your_feature_install_type
+feature_helm_chart_url: your_feature_helm_chart_url 
+feature_category: your_feature_category
+feature_internal_ingress: your_feature_has_internal_ingress
+feature_external_ingress: your_feature_has_external_ingress
+feature_connections: your_feature_has_connections

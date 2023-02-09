@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  pratexo-adapter:
+    container_name: pratexo_adapter
+    image: gcr.io/pratexo-dev-322623/feature-adapter-image
+    restart: always
+    ports:
+      - 9080:8080
+    volumes:
+      - ${LOCAL_FEATURES_DIRECTORY}:/features
+      - ~/.config/gcloud:/tmp/.config/gcloud
+    environment:
+      - GCS_MOCK=False
+      - GCS_HYBRID=True
+      - CORE_FEATURE_LIBRARY_PATH=/features
+      - PORT=8080
+      - GOOGLE_APPLICATION_CREDENTIALS=/tmp/.config/gcloud/application_default_credentials.json
+      - ORGANIZATION=${ORG_NAME}
+      - FEATURE_ADAPTER_INBOX_BUCKET=${INBOX_BUCKET_NAME}
+
+    networks:
+      - pratexo_adapter
+
+networks:
+  pratexo_adapter:
+    driver: bridge
